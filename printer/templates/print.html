@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Printer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <h2>Hostel Printer</h2>
+            <button id="logoutBtn">Logout</button>
+        </div>
+
+        <!-- Quota -->
+        <p id="quotaText"></p>
+        <p id="printerStatus"></p>
+
+        <!-- Print Settings Card -->
+        <div class="print-card">
+
+            <h3>Print Settings</h3>
+
+            <div class="print-grid">
+
+                <label>
+                    File
+                    <input type="file" id="fileInput" accept=".pdf">
+                </label>
+
+                <label>
+                    Copies
+                    <input type="number" id="copies" min="1" value="1">
+                </label>
+
+                <label>
+                    Color Mode
+                    <select id="colorMode">
+                        <option value="bw">Black & White</option>
+                        <option value="color">Color</option>
+                    </select>
+                </label>
+
+                <label>
+                    Sides
+                    <select id="sides">
+                        <option value="one-sided">Single-sided</option>
+                        <option value="two-sided-long-edge">
+                            Double-sided (Duplex)
+                        </option>
+                    </select>
+                </label>
+
+            </div>
+
+            <!-- Action buttons -->
+            <div class="actions">
+                <button id="printBtn">Print</button>
+                <button id="cancelBtn" style="display:none;">Cancel</button>
+            </div>
+
+            <!-- Status -->
+            <p id="status"></p>
+
+        </div>
+
+        <!-- Job History -->
+        <h3 id="jobHistoryTitle"></h3>
+        <div class = "table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Job ID</th>
+                    <th>Filename</th>
+                    <th>Papers</th>
+                    <th>Status</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody id="jobTableBody"></tbody>
+        </table>
+        </div>
+    </div>
+
+    <script src="/static/print.js"></script>
+
+</body>
+</html>

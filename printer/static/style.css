@@ -1,0 +1,358 @@
+/* ====== Global ====== */
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background-color: #f2f4f7;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* ====== Container ====== */
+
+.container {
+    max-width: 640px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px 32px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ====== Header ====== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2, h3 {
+    margin: 0 0 20px 0;
+    color: #222;
+    text-align: center;
+}
+/* ====== Quota ====== */
+
+#quotaText {
+    background: #eef2ff;
+    color: #3730a3;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#printerStatus {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.printer-idle { color: green; }
+.printer-printing { color: blue; }
+.printer-offline { color: red; }
+
+/* ====== Print Settings Card ====== */
+
+.print-card {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.print-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 20px;
+}
+
+/* ====== Form Fields ====== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.password-form {
+    margin-top: 20px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+input,
+select {
+    padding: 12px 8px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    height: 44px;
+}
+
+
+input[type="file"] {
+    padding: 7px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
+/* ====== Buttons ====== */
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+button {
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    box-shadow: 0 6px 15px rgba(79, 70, 229, 0.35);
+    transform: translateY(-1px);
+}
+
+#printBtn {
+    background-color: #4f46e5;
+    color: white;
+    flex: 1;
+}
+
+#printBtn:hover {
+    background-color: #4338ca;
+}
+
+#cancelBtn {
+    background-color: #ef4444;
+    color: white;
+}
+
+#cancelBtn:hover {
+    background-color: #dc2626;
+}
+
+/* ====== Logout ====== */
+
+#logoutBtn {
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    color: #111;
+    font-size: 13px;
+    padding: 9px 14px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#logoutBtn:hover {
+    background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+
+/* ====== Status ====== */
+
+#status {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ====== Table ====== */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    table-layout: fixed;
+    min-width: 600px
+}
+
+th {
+    background: #4f46e5;
+    color: white;
+    padding: 10px;
+    font-size: 13px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 13px;
+    text-align: center;
+}
+
+td.filename {
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+td.datetime {
+    font-size: 12px;
+    color: #555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+}
+
+
+/* ====== Status Colors ====== */
+
+.status-queued { color: #f59e0b; }
+.status-printing { color: #2563eb; }
+.status-completed { color: #16a34a; }
+.status-failed,
+.status-cancelled { color: #dc2626; }
+
+/* ===== Password Fields ===== */
+
+/* ===== Password input with toggle ===== */
+
+.password-field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+}
+
+.password-field input {
+    flex: 1 1 auto;      /* input takes all remaining space */
+    width: 100%;
+    min-width: 0;        /* CRITICAL for mobile */
+}
+
+/* ===== Password input with inline toggle (FINAL FIX) ===== */
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 38px; /* space for eye button */
+}
+
+.toggle-btn {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 26px;
+    width: 26px;
+    padding: 0;
+    font-size: 14px;
+    border-radius: 50%;
+    border: none;
+    background: #f3f4f6;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-btn:hover {
+    background: #e5e7eb;
+}
+
+/* ===== FORCE MOBILE LAYOUT FIX ===== */
+@media (max-width: 768px) {
+    .print-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+}
+    
+@media (max-width: 768px) {
+    .actions {
+        flex-direction: column;
+    }
+
+    #printBtn,
+    #cancelBtn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .print-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px 10px;
+        padding: 20px 16px;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    input,
+    select,
+    button {
+        font-size: 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+}
